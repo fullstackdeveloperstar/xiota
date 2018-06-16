@@ -4,7 +4,20 @@ if(!isset($_SESSION['is_logged_in']) ||  $_SESSION['is_logged_in'] != "loggedin"
 	header("Location:index.php");
 }
 
+if (!file_exists($setting_file_path)) {
+    echo "The file $filename does not exist, failure and exiting....";
+        exit(1);
+}
 
+$lines = file($setting_file_path, FILE_IGNORE_NEW_LINES);
+
+$host = $lines[0];
+$mode = $lines[1];
+$status = $lines[2];
+$th0ip = $lines[3];
+$th1ip = $lines[4];
+$th0mstr = $lines[5];
+$th0rem = $lines[6];
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -108,6 +121,7 @@ if(!isset($_SESSION['is_logged_in']) ||  $_SESSION['is_logged_in'] != "loggedin"
 		    padding: 5px 10px;
 		    font-size: 18px;
 		    border-radius: 2px;
+		    border: 0;
 		}
 	</style>
 </head>
@@ -133,43 +147,45 @@ if(!isset($_SESSION['is_logged_in']) ||  $_SESSION['is_logged_in'] != "loggedin"
 			  
 			</ul>
 
+			<form name="myform" method="POST" action="savesetting.php">
+
 			<div class="tab-content">
 			  <div id="menu-settings" class="tab-pane fade in active">
 			   <div class="row">
 			   	<div class="col-md-3 ">Hostname:</div>
-			   	<div class="col-md-9"><input></div>
+			   	<div class="col-md-9"><input value="<?=$host?>" name="host"></div>
 			   </div>
 
 			   <div class="row">
 			   	<div class="col-md-3">Mode:</div>
-			   	<div class="col-md-9"><input></div>
+			   	<div class="col-md-9"><input value="<?=$mode?>" name="mode"></div>
 			   </div>
 
 			   <div class="row">
 			   	<div class="col-md-3">Status:</div>
-			   	<div class="col-md-9"><input></div>
+			   	<div class="col-md-9"><input value="<?=$status?>" name="status"></div>
 			   </div>
 
 			   <hr style="border: solid 1px #545050;">
 
 			   <div class="row">
 			   	<div class="col-md-3">Eth0 IP:</div>
-			   	<div class="col-md-3"><input></div>
+			   	<div class="col-md-3"><input value="<?=$th0ip?>" name="th0ip"></div>
 			   	<div class="col-md-3">Eth1 IP:</div>
-			   	<div class="col-md-3"><input></div>
+			   	<div class="col-md-3"><input value="<?=$th1ip?>" name="th1ip"></div>
 			   </div>
 
 			   <div class="row">
 			   	<div class="col-md-3">Eth0 Mstr:</div>
-			   	<div class="col-md-3"><input></div>
+			   	<div class="col-md-3"><input value="<?=$th0mstr?>" name="th0mstr"></div>
 			   	<div class="col-md-3">Eth0 Rem:</div>
-			   	<div class="col-md-3"><input></div>
+			   	<div class="col-md-3"><input value="<?=$th0rem?>" name="th0rem"></div>
 			   </div>
 
 			   <div class="row">
-			   	<div class="col-md-3 save-btn">
+			   	<button type="submit" class="col-md-3 save-btn">
 			   		Save
-			   	</div>
+			   	</button>
 			   </div>
 			  </div>
 			  <div id="menu-alerts" class="tab-pane fade">
@@ -180,6 +196,7 @@ if(!isset($_SESSION['is_logged_in']) ||  $_SESSION['is_logged_in'] != "loggedin"
 			  </div>
 			  
 			</div>
+			</form>
 		</div>
 	</div>
 	<!-- <div class="xiota">
