@@ -1,19 +1,19 @@
 <?php
-$filename = 'Mode.txt';
+require "global.php";
+require "logincheck.php";
+// $filename = 'Mode.txt';
 // set defaults
 if (isset($_POST['Master']))
 {
     $master = $_POST['Master'];
-    //echo "<script type='text/javascript'>alert('$master');</script>";
-    file_put_contents($filename, $master);
+    file_put_contents($mode_file_path, $master);
     // navigate to new page
     header("Location:index.php");
 }
 if (isset($_POST['Remote']))
 {
     $remote = $_POST['Remote'];
-    echo "<script type='text/javascript'>alert('$remote');</script>";
-    file_put_contents($filename, $remote);
+    file_put_contents($mode_file_path, $remote);
     // navigate to new page
     header("Location:index.php");
 }

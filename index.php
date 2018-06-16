@@ -1,20 +1,9 @@
 <?php
-	// check os 
-	if (DIRECTORY_SEPARATOR == '/') 
-	{
-    		// unix, linux, mac
-		$filename = 'Mode.txt';
-	}
-	else
-	{
-		// windows
-		$filename = 'c:\\wamp\\www\\Mode.txt';
-	}
-	if (!file_exists($filename)) {
-        // navigate to new page
-        echo __FILE__;
-        echo dirname ( __FILE__ );
-        // header("Location:chooseindex.html");
+require "global.php";
+require "logincheck.php";
+
+	if (!file_exists($mode_file_path)) {
+        header("Location:chooseindex.php");
 	}
 ?>
 
@@ -47,20 +36,8 @@
 		<img src="images/racworc.png" class="content"/>
 	</div>
 	<?php
-	        // check os
-        	if (DIRECTORY_SEPARATOR == '/')
-        	{
-                	// unix, linux, mac
-                	$filename = 'Mode.txt';
-        	}
-        	else
-        	{
-                	// windows
-                	$filename = 'c:\\wamp\\www\\Mode.txt';
-        	}
-
 		// get all the lines in the file
-		$line = file_get_contents($filename, true);
+		$line = file_get_contents($mode_file_path, true);
 		if ($line == "Master")
     	{
     		echo"<h1>MIOTA</h1>";
