@@ -132,13 +132,14 @@ $th0rem = $lines[6];
 	</div>
 
 	<div class="content">
-		<div style="color: #b90b0b;font-size: 30px;font-weight: 600;">User Name : <?=$_SESSION['username']?></div>
+		
 		<div class="top-menu">
 			<div class="top-menu-item">Home</div>
 			<div class="top-menu-item">
 				<a href="/logout.php">Logout</a>
 			</div>	
 		</div>
+		<div style="color: #000;font-size: 13px;font-weight: 600;text-align: left;">User Name : <?=$_SESSION['username']?></div>
 		
 		<div class="xiota-content">
 			<ul class="nav nav-tabs">
