@@ -4,7 +4,6 @@ if(!isset($_SESSION['is_logged_in']) ||  $_SESSION['is_logged_in'] != "loggedin"
 	header("Location:index.php");
 }
 
-echo $_SESSION['is_logged_in'];
 
 ?>
 <!DOCTYPE HTML>
@@ -114,7 +113,12 @@ echo $_SESSION['is_logged_in'];
 </head>
 
 <body>
+	<div id="content">
+		<img src="images/racworc.png" class="content"/>
+	</div>
+
 	<div class="content">
+		<div style="color: #b90b0b;font-size: 30px;font-weight: 600;">User Name : <?=$_SESSION['username']?></div>
 		<div class="top-menu">
 			<div class="top-menu-item">Home</div>
 			<div class="top-menu-item">

@@ -19,6 +19,7 @@ foreach ($lines as $line)
     if (($arr[0] == $user) && ($arr[1] == $password))
     {
         $_SESSION['is_logged_in'] = 'loggedin';
+        $_SESSION['username'] = $user;
         
         header("Location:menu.php");
         exit(0);
