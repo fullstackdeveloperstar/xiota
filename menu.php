@@ -45,13 +45,13 @@ $th0rem = $lines[6];
 	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
 	<!--//fonts-->
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
 
 	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/jquery.js"></script>
 
 	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<style type="text/css">
 		.content{
 			padding: 30px 50px;
@@ -189,6 +189,7 @@ $th0rem = $lines[6];
 			   	</button>
 			   </div>
 			  </div>
+
 			  <div id="menu-alerts" class="tab-pane fade">
 			    <p>Some content in menu 1.</p>
 			    <p>Some content in menu 2.</p>
