@@ -42,7 +42,7 @@ $th0rem = $lines[6];
 	<link href="css/style.css" rel='stylesheet' type='text/css' />
 	<!--// Stylesheets -->
 	<!--fonts-->
-	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
 	<!--//fonts-->
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="css/bootstrap.css">
